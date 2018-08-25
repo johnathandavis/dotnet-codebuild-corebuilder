@@ -16,4 +16,4 @@ RUN apt-get update
 RUN apt-get install dotnet-sdk-2.1 -y
 RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update
-RUN apt-get install python3.6
+RUN apt-get install python3.6 -y
