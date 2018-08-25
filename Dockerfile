@@ -7,7 +7,7 @@ WORKDIR /corebuild
 ADD ./corebuild/ /corebuild
 
 RUN apt-get update
-RUN apt-get install software-properties-common -y
+RUN apt-get install software-properties-common wget -y
 RUN apt-get update
 RUN wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
 RUN dpkg -i packages-microsoft-prod.deb
