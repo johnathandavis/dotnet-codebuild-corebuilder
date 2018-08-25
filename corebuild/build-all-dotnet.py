@@ -24,7 +24,10 @@ def find_build_projects():
 
 def build_project(project_dir):
     build_process = subprocess.Popen(BUILD_SCRIPT_LOCATION, cwd=project_dir)
-    build_process.wait()
+    build_process.communicate()
+    code = build_process.returncode
+    if code != 0:
+        raise Exception("Non-zero response code from dotnet build.")
 
 build_projects = find_build_projects()
 print('Starting build process for ' + str(len(build_projects)) + ' project(s).')
