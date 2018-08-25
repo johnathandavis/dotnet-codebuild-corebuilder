@@ -6,6 +6,8 @@ WORKDIR /corebuild
 # Copy the current directory contents into the container at /app
 ADD ./corebuild/ /corebuild
 
+RUN apt-get update
+RUN apt-get install software-properties-common -y
 RUN add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
 RUN apt-get update
 RUN apt-get install awscli jq -y
