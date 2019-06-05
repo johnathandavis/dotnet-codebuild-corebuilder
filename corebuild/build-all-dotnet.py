@@ -7,7 +7,7 @@ BUILD_SCRIPT_LOCATION = '/corebuild/build_project.sh'
 
 def find_build_projects():
     csprojs = []
-    for filename in glob.iglob('**/*.csproj', recursive=True):
+    for filename in glob.iglob('**/*.csproj'):
         csprojs.append(filename)
         print('Found csproj "' + filename + "'")
 
